@@ -45,7 +45,7 @@ body {
   color: #ffe600;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
   background: linear-gradient(to right, #0077ff, #00c6ff);
   color: white;
@@ -58,7 +58,7 @@ body {
   margin-bottom: 15px;
 }
 
-/* Certificates Section */
+/* Certificates */
 .certificates {
   padding: 50px 20px;
   text-align: center;
@@ -101,7 +101,7 @@ body {
   transform: translateY(-8px);
 }
 
-/* Contact Section */
+/* Contact */
 .contact {
   padding: 50px 20px;
   text-align: center;
@@ -125,4 +125,16 @@ footer {
   color: white;
   padding: 15px;
   margin-top: 20px;
+}
+
+/* RESPONSIVE RULES */
+/* Mobile: tampilkan hanya 2 cards */
+@media (max-width: 768px) {
+  .certificate-grid .card:nth-child(n+3) {
+    display: none; /* Sembunyikan mulai card ke-3 */
+  }
+
+  .certificate-grid {
+    grid-template-columns: 1fr 1fr; /* hanya 2 kolom */
+  }
 }
