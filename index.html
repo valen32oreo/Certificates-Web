@@ -10,7 +10,7 @@
   <!-- Navbar -->
   <header>
     <nav class="navbar">
-      <h1 class="logo">My Certificates</h1>
+      <div class="logo">📜 Sertifikat Saya</div>
       <ul>
         <li><a href="#home">Beranda</a></li>
         <li><a href="#certificates">Sertifikat</a></li>
@@ -22,64 +22,66 @@
   <!-- Hero -->
   <section id="home" class="hero">
     <div class="hero-text">
-      <h2>Selamat Datang</h2>
-      <p>Ini adalah halaman portofolio saya untuk menampilkan sertifikat yang telah saya raih.</p>
+      <h1>Selamat Datang</h1>
+      <p>Kumpulan sertifikat yang telah saya raih sebagai bukti pembelajaran dan pencapaian saya.</p>
     </div>
   </section>
 
   <!-- Certificates -->
   <section id="certificates" class="certificates">
-    <h2>Sertifikat Saya</h2>
+    <h2>📑 Sertifikat Saya</h2>
     <div class="certificate-grid">
+      
+      <!-- Card -->
       <div class="card">
-        <div class="card-image">
-          <img src="img/Dicoding 1.0.png" alt="Sertifikat 1">
-        </div>
-        <div class="card-body">
-          <h3>Belajar Dasar Pemrograman</h3>
+        <img src="assets/sertifikat1.png" alt="Sertifikat 1">
+        <div class="card-content">
+          <h3>Belajar Pemrograman Dasar</h3>
           <p class="issuer">Dicoding Indonesia</p>
-          <p class="date">📅 12 Maret 2023</p>
+          <p class="date">12 Maret 2023</p>
+          <button class="btn" onclick="openModal('assets/sertifikat1.png')">Lihat Detail</button>
         </div>
       </div>
 
+      <!-- Card -->
       <div class="card">
-        <div class="card-image">
-          <img src="img/Dicoding 2.0.png" alt="Sertifikat 2">
-        </div>
-        <div class="card-body">
+        <img src="assets/sertifikat2.png" alt="Sertifikat 2">
+        <div class="card-content">
           <h3>Belajar JavaScript</h3>
           <p class="issuer">Dicoding Indonesia</p>
-          <p class="date">📅 5 Juni 2023</p>
+          <p class="date">5 Juni 2023</p>
+          <button class="btn" onclick="openModal('assets/sertifikat2.png')">Lihat Detail</button>
         </div>
       </div>
 
+      <!-- Card -->
       <div class="card">
-        <div class="card-image">
-          <img src="img/Looker Data Studio.png" alt="Sertifikat 3">
-        </div>
-        <div class="card-body">
+        <img src="assets/sertifikat3.png" alt="Sertifikat 3">
+        <div class="card-content">
           <h3>Belajar Frontend</h3>
           <p class="issuer">Dicoding Indonesia</p>
-          <p class="date">📅 10 Januari 2024</p>
+          <p class="date">10 Januari 2024</p>
+          <button class="btn" onclick="openModal('assets/sertifikat3.png')">Lihat Detail</button>
         </div>
       </div>
 
+      <!-- Card -->
       <div class="card">
-        <div class="card-image">
-          <img src="img/Wireframing in UI UX Design.png" alt="Sertifikat 4">
-        </div>
-        <div class="card-body">
+        <img src="assets/sertifikat4.png" alt="Sertifikat 4">
+        <div class="card-content">
           <h3>Belajar Backend</h3>
           <p class="issuer">Dicoding Indonesia</p>
-          <p class="date">📅 20 Juli 2024</p>
+          <p class="date">20 Juli 2024</p>
+          <button class="btn" onclick="openModal('assets/sertifikat4.png')">Lihat Detail</button>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="contact">
-    <h2>Hubungi Saya</h2>
+    <h2>📬 Hubungi Saya</h2>
     <p>Email: <a href="mailto:emailkamu@gmail.com">emailkamu@gmail.com</a></p>
     <p>LinkedIn: <a href="#">linkedin.com/in/username</a></p>
   </section>
@@ -88,5 +90,13 @@
   <footer>
     <p>© 2025 | Dibuat dengan ❤️ oleh Saya</p>
   </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img id="modal-img" class="modal-content">
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
