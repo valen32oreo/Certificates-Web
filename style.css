@@ -107,24 +107,24 @@ body {
 
 .card-body {
   padding: 20px;
-  text-align: left;
+  text-align: center;
 }
 
 .card-body h3 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin-bottom: 6px;
   color: #222;
 }
 
 .card-body .issuer {
-  color: #555;
+  color: #444;
   font-size: 0.95rem;
   margin-bottom: 6px;
 }
 
 .card-body .date {
   font-size: 0.85rem;
-  color: #888;
+  color: #777;
   font-style: italic;
 }
 
@@ -155,13 +155,9 @@ footer {
   font-size: 0.9rem;
 }
 
-/* RESPONSIVE */
-/* Mobile: hanya tampilkan 2 cards */
+/* RESPONSIVE GRID */
+/* Mobile tetap 2 kolom */
 @media (max-width: 768px) {
-  .certificate-grid .card:nth-child(n+3) {
-    display: none;
-  }
-
   .certificate-grid {
     grid-template-columns: 1fr 1fr;
   }
