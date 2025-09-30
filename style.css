@@ -24,6 +24,7 @@ body {
 
 .navbar .logo {
   font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .navbar ul {
@@ -60,50 +61,69 @@ body {
 
 /* Certificates */
 .certificates {
-  padding: 50px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
 .certificates h2 {
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .certificate-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .card {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 16px;
   overflow: hidden;
-  transition: transform 0.3s;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-}
-
-.card h3 {
-  margin: 15px 0 5px;
-}
-
-.card p {
-  margin-bottom: 15px;
-  color: #666;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
   transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* supaya gambar rapi */
+  display: block;
+}
+
+.card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-body h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.card-body p {
+  color: #666;
+  font-size: 0.95rem;
 }
 
 /* Contact */
 .contact {
-  padding: 50px 20px;
+  padding: 60px 20px;
   text-align: center;
   background: #eef3f7;
 }
@@ -125,16 +145,17 @@ footer {
   color: white;
   padding: 15px;
   margin-top: 20px;
+  font-size: 0.9rem;
 }
 
-/* RESPONSIVE RULES */
-/* Mobile: tampilkan hanya 2 cards */
+/* RESPONSIVE */
+/* Mobile: hanya tampilkan 2 cards */
 @media (max-width: 768px) {
   .certificate-grid .card:nth-child(n+3) {
-    display: none; /* Sembunyikan mulai card ke-3 */
+    display: none;
   }
 
   .certificate-grid {
-    grid-template-columns: 1fr 1fr; /* hanya 2 kolom */
+    grid-template-columns: 1fr 1fr;
   }
 }
