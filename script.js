@@ -8,13 +8,11 @@ function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
 
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-  navbar.classList.toggle("scrolled", window.scrollY > 0);
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 });
