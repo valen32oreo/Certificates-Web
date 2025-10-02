@@ -11,7 +11,6 @@
   <header>
     <nav class="navbar">
       <div class="logo">Sertifikat Saya</div>
-      <!-- Tombol hamburger -->
       <div class="menu-toggle" id="menu-toggle">&#9776;</div>
       <ul class="nav-links" id="nav-links">
         <li><a href="#home"><strong>Beranda</strong></a></li>
@@ -32,52 +31,11 @@
   <!-- Certificates -->
   <section id="certificates" class="certificates">
     <h2>Sertifikat Saya</h2>
-    <div class="certificate-grid">
-
-      <!-- Card -->
-      <div class="card">
-        <img src="img/Dicoding 1.0.png" alt="Sertifikat 1">
-        <div class="card-content">
-          <h3>Memulai Pemrograman Dengan C</h3>
-          <p class="issuer">Dicoding Indonesia</p>
-          <p class="date">30 September 2025</p>
-          <button class="btn" onclick="openModal('img/Dicoding 1.0.png')">Lihat Detail</button>
-        </div>
-      </div>
-
-      <!-- Card -->
-      <div class="card">
-        <img src="img/Dicoding 2.0.png" alt="Sertifikat 2">
-        <div class="card-content">
-          <h3>Memulai Pemrograman Dengan Java</h3>
-          <p class="issuer">Dicoding Indonesia</p>
-          <p class="date">30 September 2025</p>
-          <button class="btn" onclick="openModal('img/Dicoding 2.0.png')">Lihat Detail</button>
-        </div>
-      </div>
-
-      <!-- Card -->
-      <div class="card">
-        <img src="img/Looker Data Studio.png" alt="Sertifikat 3">
-        <div class="card-content">
-          <h3>Looker Data Studio</h3>
-          <p class="issuer">MySkill</p>
-          <p class="date">1 November 2025</p>
-          <button class="btn" onclick="openModal('img/Looker Data Studio.png')">Lihat Detail</button>
-        </div>
-      </div>
-
-      <!-- Card -->
-      <div class="card">
-        <img src="img/Wireframing in UI UX Design.png" alt="Sertifikat 4">
-        <div class="card-content">
-          <h3>Wireframing in UI UX Design</h3>
-          <p class="issuer">MySkill</p>
-          <p class="date">5 November 2025</p>
-          <button class="btn" onclick="openModal('img/Wireframing in UI UX Design.png')">Lihat Detail</button>
-        </div>
-      </div>
-
+    <div class="certificate-list">
+      <img src="img/Dicoding 1.0.png" alt="Sertifikat 1" onclick="openModal('img/Dicoding 1.0.png')">
+      <img src="img/Dicoding 2.0.png" alt="Sertifikat 2" onclick="openModal('img/Dicoding 2.0.png')">
+      <img src="img/Looker Data Studio.png" alt="Sertifikat 3" onclick="openModal('img/Looker Data Studio.png')">
+      <img src="img/Wireframing in UI UX Design.png" alt="Sertifikat 4" onclick="openModal('img/Wireframing in UI UX Design.png')">
     </div>
   </section>
 
@@ -96,18 +54,15 @@
   <!-- Modal -->
   <div id="modal" class="modal" aria-hidden="true">
     <div class="modal-backdrop" id="modal-backdrop"></div>
-
-    <div class="modal-window" role="dialog" aria-modal="true" aria-label="Preview sertifikat">
-      <button class="modal-close" id="modal-close" aria-label="Tutup">&times;</button>
-
+    <div class="modal-window">
+      <button class="modal-close" id="modal-close">&times;</button>
       <div class="modal-controls">
-        <button id="zoom-out" title="Perkecil">-</button>
-        <button id="zoom-fit" title="Sesuaikan / Asli">⤢</button>
-        <button id="zoom-in" title="Perbesar">+</button>
+        <button id="zoom-out">−</button>
+        <button id="zoom-fit">⤢</button>
+        <button id="zoom-in">+</button>
       </div>
-
       <div class="modal-inner" id="modal-inner">
-        <img id="modal-img" src="" alt="Preview sertifikat">
+        <img id="modal-img" src="" alt="Preview Sertifikat">
       </div>
     </div>
   </div>
