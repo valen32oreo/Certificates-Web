@@ -40,6 +40,11 @@ body {
 .navbar ul li a {
   text-decoration: none;
   color: white;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #ffe600;
 }
 
 .menu-toggle {
@@ -53,7 +58,12 @@ body {
   background: linear-gradient(to right, #0077ff, #00c6ff);
   color: white;
   text-align: center;
-  padding: 100px 20px;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
 }
 
 /* Certificates */
@@ -75,15 +85,16 @@ body {
 
 .certificate-list img {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .certificate-list img:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 /* Contact */
@@ -91,6 +102,16 @@ body {
   padding: 40px 20px;
   text-align: center;
   background: #eef3f7;
+}
+
+.contact a {
+  color: #0077ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */
@@ -119,7 +140,7 @@ footer {
 .modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
 }
 
 .modal-window {
@@ -132,33 +153,17 @@ footer {
   z-index: 2010;
 }
 
-.modal-controls {
-  position: absolute;
-  top: 12px;
-  right: 52px;
-  display: flex;
-  gap: 8px;
-  z-index: 2020;
-}
-
-.modal-controls button {
-  background: rgba(255,255,255,0.95);
-  border: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
 .modal-close {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 10px;
+  right: 12px;
   background: transparent;
   border: none;
   color: white;
   font-size: 2rem;
   cursor: pointer;
   z-index: 2021;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
 .modal-inner {
@@ -176,6 +181,8 @@ footer {
   transform-origin: center center;
   transition: transform 0.1s ease;
   cursor: grab;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .modal-inner img.grabbing {
