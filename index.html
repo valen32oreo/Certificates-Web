@@ -7,9 +7,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Navbar -->
   <header>
     <nav class="navbar">
       <div class="logo">Sertifikat Saya</div>
+      <!-- Tombol hamburger -->
       <div class="menu-toggle" id="menu-toggle">&#9776;</div>
       <ul class="nav-links" id="nav-links">
         <li><a href="#home"><strong>Beranda</strong></a></li>
@@ -19,6 +21,7 @@
     </nav>
   </header>
 
+  <!-- Hero -->
   <section id="home" class="hero">
     <div class="hero-text">
       <h1>Selamat Datang</h1>
@@ -26,10 +29,11 @@
     </div>
   </section>
 
+  <!-- Certificates -->
   <section id="certificates" class="certificates">
     <h2>Sertifikat Saya</h2>
     <div class="certificate-grid">
-      
+
       <!-- Card -->
       <div class="card">
         <img src="img/Dicoding 1.0.png" alt="Sertifikat 1">
@@ -47,7 +51,7 @@
         <div class="card-content">
           <h3>Memulai Pemrograman Dengan Java</h3>
           <p class="issuer">Dicoding Indonesia</p>
-          <p class="date">30 September 202</p>
+          <p class="date">30 September 2025</p>
           <button class="btn" onclick="openModal('img/Dicoding 2.0.png')">Lihat Detail</button>
         </div>
       </div>
@@ -77,6 +81,7 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact" class="contact">
     <h2>Hubungi Saya</h2>
     <p>Email: <a href="mailto:emailkamu@gmail.com">emailkamu@gmail.com</a></p>
@@ -88,9 +93,23 @@
     <p>© 2025 | Dibuat dengan ❤️ oleh Saya</p>
   </footer>
 
-  <div id="modal" class="modal" onclick="closeModal()">
-    <span class="close">&times;</span>
-    <img id="modal-img" class="modal-content">
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+
+    <div class="modal-window" role="dialog" aria-modal="true" aria-label="Preview sertifikat">
+      <button class="modal-close" id="modal-close" aria-label="Tutup">&times;</button>
+
+      <div class="modal-controls">
+        <button id="zoom-out" title="Perkecil">-</button>
+        <button id="zoom-fit" title="Sesuaikan / Asli">⤢</button>
+        <button id="zoom-in" title="Perbesar">+</button>
+      </div>
+
+      <div class="modal-inner" id="modal-inner">
+        <img id="modal-img" src="" alt="Preview sertifikat">
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
