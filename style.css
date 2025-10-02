@@ -79,29 +79,39 @@ body {
 
 .certificate-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr); /* default 2 kolom di desktop */
   gap: 15px;
   justify-items: center;
 }
 
 .certificate-list img {
   width: 100%;
-  max-width: 450px;
-  height: 200px;        
-  object-fit: contain;  
-  background: #fff;     
+  max-width: 450px;   /* dibatasi agar tidak terlalu besar */
   border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 
 .certificate-list img:hover {
   transform: scale(1.01);
 }
 
-@media (min-width: 1400px) {
+/* Tablet */
+@media (max-width: 992px) {
   .certificate-list {
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: 1fr; /* tablet & mobile: 1 kolom */
+  }
+
+  .certificate-list img {
+    max-width: 380px;
+  }
+}
+
+/* Mobile kecil */
+@media (max-width: 480px) {
+  .certificate-list img {
+    max-width: 320px;
   }
 }
 
