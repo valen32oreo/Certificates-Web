@@ -86,7 +86,7 @@ body {
 
 .certificate-list img {
   width: 100%;
-  max-width: 450px;   
+  max-width: 320px;  
   border-radius: 6px;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -97,21 +97,9 @@ body {
   transform: scale(1.01);
 }
 
-/* Tablet */
-@media (max-width: 992px) {
+@media (min-width: 1400px) {
   .certificate-list {
-    grid-template-columns: 1fr; 
-  }
-
-  .certificate-list img {
-    max-width: 380px;
-  }
-}
-
-/* Mobile kecil */
-@media (max-width: 480px) {
-  .certificate-list img {
-    max-width: 320px;
+    grid-template-columns: repeat(3, 1fr); 
   }
 }
 
