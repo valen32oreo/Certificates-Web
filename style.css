@@ -78,15 +78,15 @@ body {
 }
 
 .certificate-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* desktop: 2 kolom */
   gap: 20px;
+  justify-items: center;
 }
 
 .certificate-list img {
   width: 100%;
-  max-width: 900px;
-  margin: auto;
+  max-width: 600px;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -96,6 +96,14 @@ body {
 .certificate-list img:hover {
   transform: scale(1.01);
 }
+
+/* Mobile: hanya 1 kolom */
+@media (max-width: 768px) {
+  .certificate-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Contact */
 .contact {
