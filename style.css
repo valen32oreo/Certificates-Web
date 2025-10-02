@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
   font-family: "Segoe UI", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -40,14 +40,8 @@ body {
 .navbar ul li a {
   text-decoration: none;
   color: white;
-  transition: 0.3s;
 }
 
-.navbar ul li a:hover {
-  color: #ffe600;
-}
-
-/* Tombol Hamburger */
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
@@ -62,102 +56,41 @@ body {
   padding: 100px 20px;
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-}
-
 /* Certificates */
 .certificates {
-  padding: 60px 20px;
+  padding: 40px 20px;
   text-align: center;
 }
 
 .certificates h2 {
   font-size: 2rem;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
-.certificate-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  transition: 0.3s ease;
+.certificate-list {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.card img {
+.certificate-list img {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
-
-.card-content {
-  padding: 20px;
-  text-align: left;
-}
-
-.card-content h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: #222;
-}
-
-.card-content .issuer {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.card-content .date {
-  font-size: 0.85rem;
-  color: #777;
-  margin-bottom: 15px;
-}
-
-.btn {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  background: #0077ff;
-  color: white;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform 0.2s ease;
 }
 
-.btn:hover {
-  background: #005fcc;
+.certificate-list img:hover {
+  transform: scale(1.02);
 }
 
 /* Contact */
 .contact {
-  padding: 60px 20px;
+  padding: 40px 20px;
   text-align: center;
   background: #eef3f7;
-}
-
-.contact a {
-  color: #0077ff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.contact a:hover {
-  text-decoration: underline;
 }
 
 /* Footer */
@@ -169,7 +102,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Modal image viewer */
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -186,8 +119,7 @@ footer {
 .modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.75);
-  transition: opacity 180ms ease;
+  background: rgba(0,0,0,0.8);
 }
 
 .modal-window {
@@ -214,9 +146,7 @@ footer {
   border: none;
   padding: 6px 10px;
   border-radius: 6px;
-  font-size: 1rem;
   cursor: pointer;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
 .modal-close {
@@ -228,29 +158,23 @@ footer {
   color: white;
   font-size: 2rem;
   cursor: pointer;
-  z-index: 2020;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  z-index: 2021;
 }
 
 .modal-inner {
-  max-width: calc(100vw - 80px);
-  max-height: calc(100vh - 80px);
+  max-width: calc(100vw - 60px);
+  max-height: calc(100vh - 60px);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  touch-action: none;
 }
 
 .modal-inner img {
-  display: block;
-  user-select: none;
-  -webkit-user-drag: none;
   max-width: none;
   max-height: none;
   transform-origin: center center;
-  transition: transform 120ms ease;
-  will-change: transform;
+  transition: transform 0.1s ease;
   cursor: grab;
 }
 
@@ -274,7 +198,6 @@ footer {
     top: 60px;
     left: 0;
     padding: 15px 0;
-    z-index: 999;
   }
 
   .navbar ul.active {
@@ -284,10 +207,8 @@ footer {
   .navbar ul li {
     margin: 10px 20px;
   }
-}
 
-@media (max-width: 480px) {
-  .modal-controls { right: 12px; top: 8px; gap:6px; }
-  .modal-controls button { padding:6px 8px; font-size:0.95rem; }
-  .modal-close { font-size:1.6rem; top:6px; right:6px; }
+  .certificate-list img {
+    max-width: 100%;
+  }
 }
