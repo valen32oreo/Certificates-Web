@@ -15,16 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Modal Viewer
+// Modal Viewer (fit/original + close only)
 (function () {
   const modal = document.getElementById('modal');
   const backdrop = document.getElementById('modal-backdrop');
   const closeBtn = document.getElementById('modal-close');
   const modalImg = document.getElementById('modal-img');
   const inner = document.getElementById('modal-inner');
-  const zoomIn = document.getElementById('zoom-in');
-  const zoomOut = document.getElementById('zoom-out');
-  const zoomFit = document.getElementById('zoom-fit');
 
   let scale = 1, dragging = false, dragStart = {x:0,y:0}, translate = {x:0,y:0}, fitMode = true;
 
@@ -38,13 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
     scale = ratio; translate = {x:0,y:0}; fitMode = true; apply();
   }
 
-  function openModal(src) {
+  window.openModal = function (src) {
     modal.classList.add("open");
     modalImg.src = src;
     document.body.style.overflow = "hidden";
     modalImg.onload = () => fitToScreen();
-  }
-  window.openModal = openModal;
+  };
 
   function closeModal() {
     modal.classList.remove("open");
@@ -54,10 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   closeBtn.addEventListener("click", closeModal);
   backdrop.addEventListener("click", closeModal);
 
-  zoomIn.addEventListener("click", () => { scale *= 1.2; fitMode=false; apply(); });
-  zoomOut.addEventListener("click", () => { scale /= 1.2; fitMode=false; apply(); });
-  zoomFit.addEventListener("click", () => fitToScreen());
-
+  // drag support
   modalImg.addEventListener("pointerdown", e => {
     if (fitMode) return;
     dragging = true; dragStart = {x:e.clientX,y:e.clientY};
@@ -71,12 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
     dragStart = {x:e.clientX,y:e.clientY};
     apply();
   });
-  modalImg.addEventListener("pointerup", e => {
+  modalImg.addEventListener("pointerup", () => {
     dragging = false; modalImg.classList.remove("grabbing");
   });
 
+  // double click/tap = toggle fit/original
   inner.addEventListener("dblclick", () => {
-    if (fitMode) { scale = 1; translate = {x:0,y:0}; fitMode=false; apply(); }
-    else fitToScreen();
+    if (fitMode) { 
+      scale = 1; translate={x:0,y:0}; fitMode=false; apply(); 
+    } else fitToScreen();
   });
 })();
