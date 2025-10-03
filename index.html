@@ -1,67 +1,80 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Certificates</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Showcase</title>
+  <link rel="stylesheet" href="cert.css" />
 </head>
 <body>
+
   <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">My Certificates</div>
-      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home"><strong>Home</strong></a></li>
-        <li><a href="#certificates"><strong>Certificates</strong></a></li>
-        <li><a href="#contact"><strong>Contact</strong></a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="navbar">
+    <div class="logo">valen</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>Welcome</h1>
-      <p>A collection of certificates that I have earned as proof of my learning and achievements.</p>
-    </div>
+    <h1>Portfolio Showcase</h1>
+    <p>Explore my journey through projects, certifications, 
+    and technical expertise. Each section represents a milestone in my continuous learning path.</p>
   </section>
 
-  <!-- Certificates -->
-  <section id="certificates" class="certificates">
-    <h2>My Certificates</h2>
-    <div class="certificate-list">
-      <img src="img/Dicoding 1.0.png" alt="Certificates 1" onclick="openModal('img/Dicoding 1.0.png')">
-      <img src="img/Dicoding 2.0.png" alt="Certificates 2" onclick="openModal('img/Dicoding 2.0.png')">
-      <img src="img/Looker Data Studio.png" alt="Certificates 3" onclick="openModal('img/Looker Data Studio.png')">
-      <img src="img/Wireframing in UI UX Design.png" alt="Certificates 4" onclick="openModal('img/Wireframing in UI UX Design.png')">
+  <!-- Tabs -->
+  <section id="portfolio" class="portfolio">
+    <div class="tabs">
+      <button class="tab-link active" onclick="openTab(event,'projects')"><strong>Projects</strong></button>
+      <button class="tab-link" onclick="openTab(event,'certificates')"><strong>Certificates</strong></button>
+      <button class="tab-link" onclick="openTab(event,'tech')"><strong>Tech Stack</strong></button>
     </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:emailkamu@gmail.com">emailkamu@gmail.com</a></p>
-    <p>LinkedIn: <a href="#">linkedin.com/in/username</a></p>
+    <!-- Projects -->
+    <div id="projects" class="tab-content active">
+      <div class="grid">
+        <div class="card">
+          <h3>Aritmatika Solver</h3>
+          <p>Program untuk mempermudah pengguna dalam menyelesaikan soal aritmatika.</p>
+        </div>
+        <div class="card">
+          <h3>AutoChat - Discord</h3>
+          <p>Bot Discord otomatis untuk menjadwalkan pesan secara teratur.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificates -->
+    <div id="certificates" class="tab-content">
+      <div class="grid">
+        <img src="img/Dicoding 1.0.png" alt="Certificate 1">
+        <img src="img/Dicoding 2.0.png" alt="Certificate 2">
+        <img src="img/Looker Data Studio.png" alt="Certificate 3">
+        <img src="img/Wireframing in UI UX Design.png" alt="Certificate 3">
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div id="tech" class="tab-content">
+      <div class="grid">
+        <div class="tech">HTML</div>
+        <div class="tech">CSS</div>
+        <div class="tech">JavaScript</div>
+        <div class="tech">React</div>
+        <div class="tech">Tailwind</div>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 | Dibuat dengan ❤️ oleh Saya</p>
+    <p>© 2025 valen. All rights reserved.</p>
   </footer>
 
-  <!-- Modal -->
-  <div id="modal" class="modal" aria-hidden="true">
-    <div class="modal-backdrop" id="modal-backdrop"></div>
-    <div class="modal-window">
-      <button class="modal-close" id="modal-close">&times;</button>
-      <div class="modal-inner" id="modal-inner">
-        <img id="modal-img" src="" alt="Preview Sertifikat">
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+  <script src="sc.js"></script>
 </body>
 </html>
